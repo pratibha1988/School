@@ -56,12 +56,14 @@ class Schooldata:
         :return: return the total count
         it will return total count to filelines-1 as first line is header
         '''
+        count = sum(1 for row in data_file)
+        print("Total Schools: {}".format(count))
         school_dict = {}
         for l in data_file:
             if l not in school_dict:
                 school_dict[l]=1
 
-        print("Total Schools: {}".format(len(school_dict)))
+        print("Total Unique Schools: {}".format(len(school_dict)))
 
     def count_by_state(self, data_file):
         '''
